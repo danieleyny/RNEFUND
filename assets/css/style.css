@@ -897,6 +897,74 @@ body.nav-active { overflow: hidden; }
 
 
 /*-----------------------------------*\
+  #STATS
+\*-----------------------------------*/
+
+.stats { background-color: hsl(0, 13%, 95%); }
+
+.stats-banner {
+  max-width: max-content;
+  margin-inline: auto;
+  aspect-ratio: 1 / 0.78;
+  margin-block-end: 25px;
+}
+
+.stats-list {
+  display: grid;
+  gap: 25px;
+}
+
+.stats-item {
+  position: relative;
+  padding-block: 5px;
+  padding-inline-start: 15px;
+}
+
+.stats-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.stats-item.purple::before { background-color: hsl(260, 100%, 44%); }
+
+.stats-item.red::before { background-color: hsl(332, 100%, 51%); }
+
+.stats-item.green::before { background-color: hsl(143, 85%, 58%); }
+
+.stats-item.yellow::before { background-color: hsl(33, 100%, 50%); }
+
+.stats-item .item-title {
+  color: hsl(0, 0%, 0%);
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-block-end: 5px;
+}
+
+.stats-item .item-title .span {
+  color: hsl(0, 0%, 40%);
+  font-weight: 400;
+  display: inline-block;
+  font-size: 1.8rem;
+}
+
+.stats-text {
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+/*-----------------------------------*\
   #SERVICE
 \*-----------------------------------*/
 
@@ -1461,6 +1529,9 @@ textarea.input-field {
    * CUSTOM PROPERTY
    */
 
+
+   .stats-list { grid-template-columns: 1fr 1fr; }
+
   :root {
 
     /**
@@ -1712,6 +1783,19 @@ textarea.input-field {
 
 
   /**
+   * STATS
+   */
+
+   .stats-list { padding-inline: 60px; }
+
+   .stats-item { padding-inline-start: 20px; }
+ 
+   .stats-item .item-title { font-size: 4rem; }
+ 
+ 
+
+
+  /**
    * RESERVATION
    */
 
@@ -1812,6 +1896,29 @@ textarea.input-field {
     grid-template-columns: 0.7fr 1fr;
     gap: 30px;
   }
+
+
+
+  /**
+   * STATS
+   */
+
+   .stats .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+  }
+
+  .stats-banner { margin-block-end: 0; }
+
+  .stats-list { grid-template-columns: 1fr; }
+
+  .stats-item:nth-child(even) { margin-inline-start: auto; }
+
+  .stats-item .item-title { font-size: 4.5rem; }
+
+  .stats-text { font-size: 2.2rem; }
+
 
 
 
