@@ -20,7 +20,7 @@
    * COLORS
    */
 
-  --gold-crayola: hsl(38, 61%, 73%);
+  --gold-crayola: rgb(228, 197, 144);
   --quick-silver: hsla(0, 0%, 65%, 1);
   --davys-grey: hsla(30, 3%, 34%, 1);
   --smoky-black-1: hsla(40, 12%, 5%, 1);
@@ -1084,11 +1084,10 @@ body.nav-active { overflow: hidden; }
 
 
 
-
-
 /*-----------------------------------*\
   #SPECIAL DISH
 \*-----------------------------------*/
+
 
 .special-dish-content { padding-block: 70px; }
 
@@ -1116,6 +1115,26 @@ body.nav-active { overflow: hidden; }
 
 .special-dish .btn { margin-inline: auto; }
 
+.special-dish-banner {
+  position: relative;
+  width: 100%;
+  height: 900px;
+  overflow: hidden;
+}
+
+.special-dish-banner .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.special-dish-banner .slide.active {
+  opacity: 1;
+}
 
 
 

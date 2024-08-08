@@ -131,6 +131,9 @@ autoSlide();
 
 
 
+
+
+
 /**
  * PARALLAX EFFECT
  */

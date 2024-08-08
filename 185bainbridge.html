@@ -37,6 +37,40 @@
   <link rel="preload" as="image" href="./assets/images/Portfolio/150 Lawrence.png">
   <link rel="preload" as="image" href="./assets/images/Portfolio/1476 Myrtle Avenue.png">
 
+<script>
+
+/**
+ * Special Dish Photo Auto Slider
+ */
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".special-dish-banner .slide");
+  const totalSlides = slides.length;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+  }
+
+  // Initialize the slideshow
+  showSlide(currentSlide);
+  setInterval(nextSlide, 3500); // Change slide every 7 seconds
+});
+
+
+
+</script>
+
+
+
 </head>
 
 <body id="top">
@@ -324,60 +358,29 @@
 
 
 
-
-
-
-
-
-      <!-- 
-        - #SPECIAL DISH
-      -->
-
       <section class="special-dish text-center" aria-labelledby="dish-label">
-
         <div class="special-dish-banner">
-          <img src="./assets/images/special-dish-banner.jpg" width="940" height="900" loading="lazy" alt="special dish"
-            class="img-cover">
+          <img src="./assets/images/185Bainbridge/bainbridge1.jpg" width="940" height="900" loading="lazy" alt="special dish" class="img-cover slide active">
+          <img src="./assets/images/185Bainbridge/bainbridge2.jpg" width="940" height="900" loading="lazy" alt="special di" class="img-cover slide">
+          <img src="./assets/images/185Bainbridge/bainbridge3.jpg" width="940" height="900" loading="lazy" alt="special sh" class="img-cover slide">
+          <img src="./assets/images/185Bainbridge/bainbridge4.webp" width="940" height="900" loading="lazy" alt="speci dish" class="img-cover slide">
+          <img src="./assets/images/185Bainbridge/bainbridge5.webp" width="940" height="900" loading="lazy" alt="special dh" class="img-cover slide">
+          <img src="./assets/images/185Bainbridge/bainbridge6.jpg" width="940" height="900" loading="lazy" alt="special dh" class="img-cover slide">
         </div>
-
+      
         <div class="special-dish-content bg-black-10">
           <div class="container">
-
-            <img src="./assets/images/badge-1.png" width="28" height="41" loading="lazy" alt="badge" class="abs-img">
-
-            <p class="section-subtitle label-2">Special Dish</p>
-
-            <h2 class="headline-1 section-title">Lobster Tortellini</h2>
-
-            <p class="section-text">
-              Lorem Ipsum is simply dummy text of the printingand typesetting industry lorem Ipsum has been the
-              industrys standard dummy text ever since the when an unknown printer took a galley of type.
-            </p>
-
-            <div class="wrapper">
-              <del class="del body-3">$40.00</del>
-
-              <span class="span body-1">$20.00</span>
-            </div>
-
-            <a href="#" class="btn btn-primary">
-              <span class="text text-1">View All Menu</span>
-
-              <span class="text text-2" aria-hidden="true">View All Menu</span>
+            <p class="section-subtitle label-2">Property Photos</p>
+            <h2 class="headline-1 section-title">Renovation</h2>
+            <p class="section-text">185 Bainbridge origionally took out a loan to conduct a gut renovation on the property. The owners create a 2 unit townhouse that is 2,220 square feet large. One unit is a 1,440 square foot 3 bedroom duplex with 1.5 bathrooms. The second unit is a 1,044 square foot 1 bedroom 1 bathroom apartment.</p>
+            <a href="index.html#contact" class="btn btn-primary">
+              <span class="text text-1">Have a question?</span>
+              <span class="text text-2" aria-hidden="true">Ask Us</span>
             </a>
-
           </div>
         </div>
-
-        <img src="./assets/images/shape-4.png" width="179" height="359" loading="lazy" alt="" class="shape shape-1">
-
-        <img src="./assets/images/shape-9.png" width="351" height="462" loading="lazy" alt="" class="shape shape-2">
-
       </section>
-
-
-
-
+      
 
       <!-- 
         - #MENU
@@ -909,7 +912,6 @@
 
 
 
-
   <!-- 
     - #FOOTER
   -->
@@ -923,19 +925,19 @@
         <div class="footer-brand has-before has-after">
 
           <a href="#" class="logo">
-            <img src="./assets/images/logo.svg" width="160" height="50" loading="lazy" alt="RNE Fund home">
+            <img src="./assets/images/RNElogo-white.png" width="160" height="50" loading="lazy" alt="RNE Fund home">
           </a>
 
           <address class="body-4">
-            Restaurant St, Delicious City, London 9578, UK
+            214 West 102nd Street, New York, NY, 10025
           </address>
 
           <a href="mailto:rnefund@gmail.com" class="body-4 contact-link">rnefund@gmail.com</a>
 
-          <a href="tel:+88123123456" class="body-4 contact-link">Booking Request : +88-123-123456</a>
+          <a href="tel:+6464189226" class="body-4 contact-link">Give Us A Call : +646-418-9226</a>
 
           <p class="body-4">
-            Open : 09:00 am - 01:00 pm
+            Open : 24/7
           </p>
 
           <div class="wrapper">
@@ -947,7 +949,7 @@
           <p class="title-1">Get News & Offers</p>
 
           <p class="label-1">
-            Subscribe us & Get <span class="span">25% Off.</span>
+            Subscribe to be first to hear about deals.
           </p>
 
           <form action="" class="input-wrapper">
@@ -969,23 +971,19 @@
         <ul class="footer-list">
 
           <li>
-            <a href="#" class="label-2 footer-link hover-underline">Home</a>
+            <a href="index.html" class="label-2 footer-link hover-underline">Home</a>
           </li>
 
           <li>
-            <a href="#" class="label-2 footer-link hover-underline">Menus</a>
+            <a href="#deals" class="label-2 footer-link hover-underline">Deals</a>
           </li>
 
           <li>
-            <a href="#" class="label-2 footer-link hover-underline">About Us</a>
+            <a href="#whatwedo" class="label-2 footer-link hover-underline">What We Do</a>
           </li>
 
           <li>
-            <a href="#" class="label-2 footer-link hover-underline">Our Chefs</a>
-          </li>
-
-          <li>
-            <a href="#" class="label-2 footer-link hover-underline">Contact</a>
+            <a href="#contact" class="label-2 footer-link hover-underline">Contact</a>
           </li>
 
         </ul>
@@ -1019,15 +1017,13 @@
       <div class="footer-bottom">
 
         <p class="copyright">
-          &copy; 2022 RNE Fund. All Rights Reserved | Crafted by <a href="https://github.com/codewithsadee"
-            target="_blank" class="link">codewithsadee</a>
+          &copy; 2024 Eyny. All Rights Reserved
         </p>
 
       </div>
 
     </div>
   </footer>
-
 
 
 
