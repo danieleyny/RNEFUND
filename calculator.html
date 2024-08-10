@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRR & ROI Calculator</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            overflow: auto;
+        }
+
+        /* Container Styling */
+        .container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 20px;
+        }
+
+        /* Title Styling */
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        /* Label Styling */
+        label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+            color: #555;
+        }
+
+        /* Input Styling */
+        input[type="text"],
+        input[type="number"] {
+            width: calc(100% - 50px);
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+            background-color: #f8f9fa;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            background-color: #e9ecef;
+            outline: none;
+        }
+
+        /* Button Styling */
+        button {
+            padding: 12px 0;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .inline-button {
+            width: 24px;
+            height: 24px;
+            margin-left: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 24px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .remove-button {
+            background-color: red;
+            color: white;
+        }
+
+        .add-year-btn {
+            margin-top: 20px;
+            background-color: #28a745;
+            margin-bottom: 20px;
+        }
+
+        .year-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .result-section {
+            margin-bottom: 20px;
+        }
+
+        .result-section strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.2em;
+            color: #007bff;
+        }
+
+        .container:last-child {
+            margin-bottom: 40px;
+        }
+
+        #result,
+        #cashFlowResult {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1.1em;
+            color: #333;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>IRR & ROI Calculator</h1>
+
+        <label for="initialInvestment">Initial Investment Amount ($):</label>
+        <input type="text" id="initialInvestment" placeholder="e.g. 100,000" oninput="formatNumber(this)">
+
+        <label for="investmentReturn">Investment Return Amount ($):</label>
+        <input type="text" id="investmentReturn" placeholder="e.g. 150,000" oninput="formatNumber(this)">
+
+        <label for="timePeriod">Time Period (Months):</label>
+        <input type="number" id="timePeriod" placeholder="e.g. 24">
+
+        <button onclick="calculateResults()">Calculate</button>
+
+        <div id="result"></div>
+    </div>
+
+
+    <script>
+        function formatNumber(input) {
+            let value = input.value.replace(/,/g, '');
+
+            if (value === '') {
+                input.value = '';
+                return;
+            }
+
+            if (!isNaN(value)) {
+                const originalLength = value.length;
+                const originalCursorPosition = input.selectionStart;
+
+                value = parseFloat(value).toLocaleString('en');
+
+                input.value = value;
+
+                const newLength = value.length;
+                const diff = newLength - originalLength;
+                const newCursorPosition = originalCursorPosition + diff;
+
+                input.setSelectionRange(newCursorPosition, newCursorPosition);
+            }
+        }
+
+        function calculateResults() {
+            const initialInvestment = parseFloat(document.getElementById("initialInvestment").value.replace(/,/g, ''));
+            const investmentReturn = parseFloat(document.getElementById("investmentReturn").value.replace(/,/g, ''));
+            const timePeriod = parseFloat(document.getElementById("timePeriod").value);
+
+            if (isNaN(initialInvestment) || isNaN(investmentReturn) || isNaN(timePeriod) || timePeriod <= 0) {
+                alert("Please enter valid numbers in all fields.");
+                return;
+            }
+
+            const profit = investmentReturn - initialInvestment;
+            const roi = (profit / initialInvestment) * 100;
+
+            const annualTimePeriod = timePeriod / 12;
+            const irr = calculateIRR([initialInvestment * -1, investmentReturn], annualTimePeriod);
+
+            document.getElementById("result").innerHTML = `
+                <div class="result-section">
+                    <strong>Profit:</strong>
+                    $${profit.toLocaleString('en')}
+                </div>
+                <div class="result-section">
+                    <strong>ROI:</strong>
+                    ${roi.toFixed(2)}%
+                </div>
+                <div class="result-section">
+                    <strong>IRR:</strong>
+                    ${irr.toFixed(2)}%
+                </div>
+            `;
+        }
+
+        function calculateIRR(cashFlows, years) {
+            const accuracy = 1e-6;
+            const maxIterations = 1000;
+            let rate = 0.1;
+
+            for (let i = 0; i < maxIterations; i++) {
+                const npv = cashFlows.reduce((acc, val, j) => acc + val / Math.pow(1 + rate, j * years), 0);
+                if (Math.abs(npv) < accuracy) return rate * 100;
+                const derivative = cashFlows.reduce((acc, val, j) => acc - (j * years) * val / Math.pow(1 + rate, (j * years) + 1), 0);
+                rate -= npv / derivative;
+            }
+
+            return rate * 100;
+        }
+
+        function addYear() {
+            const yearCount = document.querySelectorAll('.year-container').length + 1;
+            const yearContainer = document.createElement('div');
+            yearContainer.className = 'year-container';
+
+            yearContainer.innerHTML = `
+                <label>Cash Flow Year ${yearCount}</label>
+                <input type="text" class="cashFlow" placeholder="e.g. 10,000" oninput="formatNumber(this)">
+                <span class="inline-button" onclick="toggleSign(this)">+</span>
+                <span class="inline-button remove-button" onclick="removeYear(this)">X</span>
+            `;
+            document.getElementById('cashFlowContainer').appendChild(yearContainer);
+        }
+
+        function toggleSign(button) {
+            const input = button.previousElementSibling;
+            let value = parseFloat(input.value.replace(/,/g            )); // Remove commas and parse the value as a float
+            if (isNaN(value)) return;
+
+            // Toggle between positive and negative
+            value = value * -1;
+            input.value = value.toLocaleString('en');
+        }
+
+        function removeYear(button) {
+            const yearContainer = button.parentElement;
+            yearContainer.remove();
+        }
+    </script>
+</body>
+</html>
+

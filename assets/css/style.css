@@ -800,6 +800,12 @@ body.nav-active { overflow: hidden; }
   z-index: 1;
 }
 
+.hero-text.slider-reveal {
+  max-width: 800px;
+  text-align: center;
+}
+
+
 .hero .slider-item.active {
   opacity: 1;
   visibility: visible;
@@ -1118,7 +1124,14 @@ body.nav-active { overflow: hidden; }
 .special-dish-banner {
   position: relative;
   width: 100%;
-  height: 900px;
+  height: 700px; /* Adjust the height to your desired value */
+  overflow: hidden;
+}
+
+.special-dish-content {
+  position: relative;
+  width: 100%;
+  height: 700px; /* Adjust the height to your desired value */
   overflow: hidden;
 }
 
@@ -1135,6 +1148,7 @@ body.nav-active { overflow: hidden; }
 .special-dish-banner .slide.active {
   opacity: 1;
 }
+
 
 
 
