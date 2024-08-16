@@ -942,6 +942,9 @@ body.nav-active { overflow: hidden; }
 
 .stats-item.green::before { background-color: hsl(143, 85%, 58%); }
 
+
+.stats-item.blue::before { background-color: hsl(210, 85%, 58%); }
+
 .stats-item.yellow::before { background-color: hsl(33, 100%, 50%); }
 
 .stats-item .item-title {
