@@ -906,7 +906,7 @@ body.nav-active { overflow: hidden; }
   #STATS
 \*-----------------------------------*/
 
-.stats { background-color: hsl(0, 13%, 95%); }
+.stats { background-color: #f4f1f1; }
 
 .stats-banner {
   max-width: max-content;
