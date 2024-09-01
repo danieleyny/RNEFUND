@@ -34,6 +34,7 @@
             width: 100%;
             max-width: 500px;
             margin-bottom: 20px;
+            margin-top: 50px;
         }
 
         /* Title Styling */
@@ -135,6 +136,27 @@
             margin-bottom: 40px;
         }
 
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            background-color: rgb(203, 201, 201);
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .back-button:hover {
+            background-color: #ddd;
+        }
+
+       
+
         #result,
         #cashFlowResult {
             margin-top: 20px;
@@ -149,6 +171,13 @@
     </style>
 </head>
 <body>
+    <a href="index.html" class="back-button">
+        <svg width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H3.707l4.147 4.146a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 1 1 .708.708L3.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+        </svg>
+        
+    </a>
+
     <div class="container">
         <h1>IRR & ROI Calculator</h1>
 
@@ -165,6 +194,7 @@
 
         <div id="result"></div>
     </div>
+</body>
 
 
     <script>
