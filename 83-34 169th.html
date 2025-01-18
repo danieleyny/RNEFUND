@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>RNE Fund</title>
+  <meta name="title" content="RNE Real Estate Investment Fund">
+  <meta name="description" content="This is a website made for RNE Fund">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/RNElogo-white.png" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/Portfolio/88 Lynn.png">
+  <link rel="preload" as="image" href="./assets/images/Portfolio/150 Lawrence.png">
+  <link rel="preload" as="image" href="./assets/images/Portfolio/1476 Myrtle Avenue.png">
+
+<script>
+
+/**
+ * Special Dish Photo Auto Slider
+ */
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".special-dish-banner .slide");
+  const totalSlides = slides.length;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+  }
+
+  // Initialize the slideshow
+  showSlide(currentSlide);
+  setInterval(nextSlide, 3500); // Change slide every 7 seconds
+});
+
+
+
+</script>
+
+
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #PRELOADER
+  -->
+
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    <p class="text">83-34 169th St </p>
+  </div>
+
+
+
+
+
+  <!-- 
+    - #TOP BAR
+  -->
+
+  <div class="topbar">
+    <div class="container">
+
+ 
+
+
+     
+
+      <a href="tel:+11234567890" class="topbar-item link">
+        <div class="icon">
+          <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">+1 (646) 418-9226</span>
+      </a>
+
+      <div class="separator"></div>
+      <div class="separator"></div>
+
+
+
+      <a href="mailto:rnefund@gmail.com" class="topbar-item link">
+        <div class="icon">
+          <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">rnefund@gmail.com</span>
+      </a>
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="./assets/images/RNElogo-white.png" width="140" height="40" style="margin-left: 20px;" alt="RNE Fund - Home">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/RNElogo-white.png" width="160" height="50" alt="RNE Fund - Home">
+        </a>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link hover-underline active">
+              <div class="separator"></div>
+
+              <span class="span">Home</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="deals.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span">Deals</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#stats" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span">Stats</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#propertyphotos" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span">Photos</span>
+            </a>
+          </li>
+
+
+          <li class="navbar-item">
+            <a href="index.html#contact" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span">Contact</span>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="text-center">
+          <p class="headline-1 navbar-title">Visit Us</p>
+
+          <address class="body-4">
+            214 West 102nd Street <br>
+            New York, NY, 10025
+          </address>
+
+          <p class="body-4 navbar-text">Open: 24/7</p>
+
+          <a href="mailto:rnefund@gmail.com" class="body-4 sidebar-link">rnefund@gmail.com</a>
+
+          <div class="separator"></div>
+
+          <p class="contact-label">Booking Request</p>
+
+          <a href="tel:+6464189226" class="body-1 contact-number hover-underline">
+            +646-418-9226
+          </a>
+        </div>
+
+      </nav>
+
+    
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+        
+
+<br><br><br>
+
+<br>
+<br>
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about text-center" aria-labelledby="about-label" id="about">
+        <div class="container">
+
+          <div class="about-content">
+
+            <p class="label-2 section-subtitle" id="about-label">Deal Review</p>
+
+            <h2 class="headline-1 section-title">83-34 169th St</h2>
+
+            <p class="section-text">
+              
+                The deal at 83-34 169th St focused on a strategic contract flip. We purchased the property on December 31, 2024, for $374,000 and successfully sold it back to the borrower on January 1, 2025, for $450,000. Through this approach, we worked collaboratively with the borrower to facilitate the transaction, enabling them to reclaim ownership while satisfying their obligations. This swift and efficient deal underscores our commitment to executing high-value strategies that deliver mutually beneficial outcomes.  </p>
+
+            <div class="contact-label">Call For More Info</div>
+
+            <a href="tel:+6464189226" class="body-1 contact-number hover-underline">+(646) 418-9226</a>
+
+          
+
+          </div>
+
+          <figure class="about-banner">
+
+            <img src="./assets/images/83-34 169th St/1.png" width="570" height="570" loading="lazy" alt="about banner"
+              class="w-100" data-parallax-item data-parallax-speed="1">
+
+            <div class="abs-img abs-img-1 has-before" data-parallax-item data-parallax-speed="1.75">
+              <img src="./assets/images/83-34 169th St/8334Jamaica-map.png" width="285" height="285" loading="lazy" alt=""
+                class="w-100">
+            </div>
+
+            <div class="abs-img abs-img-3 has-before">
+              <img src="./assets/images/83-34 169th St/83-34 169thsince.png" width="133" height="134" loading="lazy" alt="">
+            </div>
+
+          </figure>
+
+          <img src="./assets/images/billsbackground.webp" width="197" height="194" loading="lazy" alt="" class="shape">
+
+        </div>
+      </section>
+
+
+
+
+
+
+
+      <!-- 
+        - #STATS
+      -->
+
+      <section id="stats" class="section stats">
+        <div class="container">
+
+          <figure class="stats-banner">
+            <img src="./assets/images/statsimage.gif" width="619" height="482" loading="lazy" alt="stats"
+              class="w-100">
+          </figure>
+
+          <ul class="stats-list">
+
+            <li class="stats-item purple">
+              <h3 class="item-title">
+                $374,000
+              </h3>
+
+              <p class="stats-text">Note Purchase Price - (12/31/24)</p>
+            </li>
+
+            <li class="stats-item red">
+              <h3 class="item-title">
+                $450,000
+              </h3>
+
+              <p class="stats-text">Note Sale Price - (1/01/25)</p>
+            </li>
+
+            <li class="stats-item green">
+              <h3 class="item-title">
+                20.32%
+              </h3>
+
+              <p class="stats-text">ROI</p>
+            </li>
+
+            <li class="stats-item yellow">
+              <h3 class="item-title">
+                7,824,365%
+              </h3>
+
+              <p class="stats-text">IRR</p>
+            </li>
+
+            
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+      <section id="propertyphotos" class="special-dish text-center" aria-labelledby="dish-label">
+        <div class="special-dish-banner">
+          <img src="./assets/images/83-34 169th St/2.png" width="940" height="900" loading="lazy" alt="special dish" class="img-cover slide active">
+          <img src="./assets/images/83-34 169th St/3.png" width="940" height="900" loading="lazy" alt="special dish" class="img-cover slide active">
+          <img src="./assets/images/83-34 169th St/4.png" width="940" height="900" loading="lazy" alt="special dish" class="img-cover slide active">
+          <img src="./assets/images/83-34 169th St/5.png" width="940" height="900" loading="lazy" alt="special dish" class="img-cover slide active">
+          <img src="./assets/images/83-34 169th St/6.png" width="940" height="900" loading="lazy" alt="special dish" class="img-cover slide active">
+          <img src="./assets/images/83-34 169th St/7.png" width="940" height="900" loading="lazy" alt="special dish" class="img-cover slide active">
+          <img src="./assets/images/83-34 169th St/8.png" width="940" height="900" loading="lazy" alt="special dish" class="img-cover slide active">
+          <img src="./assets/images/83-34 169th St/9.png" width="940" height="900" loading="lazy" alt="special dish" class="img-cover slide active">
+          <img src="./assets/images/83-34 169th St/1.png" width="940" height="900" loading="lazy" alt="special dish" class="img-cover slide active">
+        
+        </div>
+      
+        <div class="special-dish-content bg-black-10">
+          <div class="container">
+            <p class="section-subtitle label-2">Property Photos</p>
+            <h2 class="headline-1 section-title">Full Development</h2>
+            <p class="section-text">This property sits on a 4,000 sq ft lot and features a 1,668 sq ft structure. Initially intended for a full gut renovation, the project was halted after the property was cleared, as the borrower ran out of funds. Zoned for either a single-family or two-family configuration, this property presents a flexible investment opportunity. With its potential for customization and redevelopment, it offers significant value for buyers seeking to maximize its use in a highly desirable area. </p>
+            <a href="index.html#contact" class="btn btn-primary">
+              <span class="text text-1">Have a question?</span>
+              <span class="text text-2" aria-hidden="true">Ask Us</span>
+              
+            </a>
+          </div>
+        </div>
+      </section>
+      
+
+
+
+<br><br><br><br><br><br><br><br><br>
+
+      <!-- 
+        - #RESERVATION
+      -->
+
+      <section id="contact" class="reservation">
+        <div class="container">
+
+          <div class="form reservation-form bg-black-10">
+
+            <form action="https://formspree.io/f/mjvjordw" method="POST" class="form-left">
+
+              <h2 name="Contact - RNE Fund" class="headline-1 text-center">Schedule A Call</h2>
+
+              <p class="form-text text-center">
+                Booking request <a href="tel:+6464189226" class="link">+646-418-9226</a>
+                or fill out the order form
+              </p>
+
+              <div class="input-wrapper">
+                <input type="text" name="Full Name -" placeholder="Your Name" autocomplete="off" class="input-field">
+
+                <input type="tel" name="Phone Number -" placeholder="Phone Number" autocomplete="off" class="input-field">
+              </div>
+
+              <div class="input-wrapper">
+
+                <div class="icon-wrapper">
+                  <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+
+                  <select name="Invest Amount -" class="input-field">
+                    <option value="1-person">$0 - $10,000</option>
+                    <option value="2-person">$10,000 - $100,000</option>
+                    <option value="3-person">$100,000 - $500,000</option>
+                    <option value="4-person">$500,000 - $1,000,000</option>
+                    <option value="5-person">$1,000,000 - $5,000,000</option>
+                    <option value="6-person">$5,000,000 - $10,000,000</option>
+                    <option value="7-person"> $10,000,000< </option>
+                  </select>
+
+                  <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+                </div>
+
+                <div class="icon-wrapper">
+                  <ion-icon name="calendar-clear-outline" aria-hidden="true"></ion-icon>
+
+                  <input type="date" name="reservation-date -" class="input-field">
+
+                  <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+                </div>
+
+                <div class="icon-wrapper">
+                  <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+
+                  <select name="Available Call Time -" class="input-field">
+                    <option value="08:00am">08 : 00 am</option>
+                    <option value="09:00am">09 : 00 am</option>
+                    <option value="010:00am">10 : 00 am</option>
+                    <option value="011:00am">11 : 00 am</option>
+                    <option value="012:00am">12 : 00 am</option>
+                    <option value="01:00pm">01 : 00 pm</option>
+                    <option value="02:00pm">02 : 00 pm</option>
+                    <option value="03:00pm">03 : 00 pm</option>
+                    <option value="04:00pm">04 : 00 pm</option>
+                    <option value="05:00pm">05 : 00 pm</option>
+                    <option value="06:00pm">06 : 00 pm</option>
+                    <option value="07:00pm">07 : 00 pm</option>
+                    <option value="08:00pm">08 : 00 pm</option>
+                    <option value="09:00pm">09 : 00 pm</option>
+                    <option value="10:00pm">10 : 00 pm</option>
+                  </select>
+
+                  <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+                </div>
+
+              </div>
+
+              <textarea name="Message -" placeholder="Message" autocomplete="off" class="input-field"></textarea>
+
+              <button type="submit" class="btn btn-secondary">
+                <span class="text text-1">Send Message</span>
+
+                <span class="text text-2" aria-hidden="true">Submit</span>
+              </button>
+
+            </form>
+
+            <div class="form-right text-center" style="background-image: url('./assets/images/form-pattern.png')">
+
+              <h2 class="headline-1 text-center">Contact Us</h2>
+
+              <p class="contact-label">Call Us</p>
+
+              <a href="tel:+6464189226" class="body-1 contact-number hover-underline">+646-418-9226</a>
+
+              <div class="separator"></div>
+
+              <p class="contact-label">Location</p>
+
+              <address class="body-4">
+                214 West 102nd Street, <br>
+                New York, NY, 10025
+              </address>
+
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer section has-bg-image text-center"
+    style="background-image: url('./assets/images/footerbackground.jpeg')">
+    <div class="container">
+
+      <div class="footer-top grid-list">
+
+        <div class="footer-brand has-before has-after">
+
+          <a href="index.html" class="logo">
+            <img src="./assets/images/RNElogo-white.png" width="160" height="50" loading="lazy" alt="RNE Fund home">
+          </a>
+
+          <address class="body-4">
+            214 West 102nd Street, New York, NY, 10025
+          </address>
+
+          <a href="mailto:rnefund@gmail.com" class="body-4 contact-link">rnefund@gmail.com</a>
+
+          <a href="tel:+6464189226" class="body-4 contact-link">Give Us A Call : +646-418-9226</a>
+
+          <p class="body-4">
+            Open : 24/7
+          </p>
+
+          <div class="wrapper">
+            <div class="separator"></div>
+            <div class="separator"></div>
+            <div class="separator"></div>
+          </div>
+
+          <p class="title-1">Get News & Offers</p>
+
+          <p class="label-1">
+            Subscribe to be first to hear about deals.
+          </p>
+
+          <form action="https://formspree.io/f/mjvjordw" method="POST" class="input-wrapper">
+            <div class="icon-wrapper">
+              <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+
+              <input type="RNE Fund - newsletter" name="email_address" placeholder="Your email" autocomplete="off" class="input-field">
+            </div>
+
+            <button type="submit" class="btn btn-secondary">
+              <span class="text text-1">Subscribe</span>
+
+              <span class="text text-2" aria-hidden="true">Subscribe</span>
+            </button>
+          </form>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <a href="index.html" class="label-2 footer-link hover-underline">Home</a>
+          </li>
+
+          <li>
+            <a href="index.html#deals" class="label-2 footer-link hover-underline">Deals</a>
+          </li>
+
+          <li>
+            <a href="index.html#whatwedo" class="label-2 footer-link hover-underline">What We Do</a>
+          </li>
+
+          <li>
+            <a href="index.html#contact" class="label-2 footer-link hover-underline">Contact</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Facebook</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Instagram</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Twitter</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Youtube</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Google Map</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p class="copyright">
+          &copy; 2024 Eyny. All Rights Reserved
+        </p>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn active" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
